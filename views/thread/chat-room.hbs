@@ -1,0 +1,40 @@
+<div class="container chat-wrapper">
+    <div class="wrapper chat">
+        {{#each messages}}
+            {{#if isCurrentUser}}
+                {{#if isLink}}
+                    <div class="thread-message right"><a href="{{content}}" target="_blank">{{content}}
+                        {{#if isImage}}
+                            <img class="message-img" src="{{content}}">
+                        {{/if}}
+                    </a></div>
+                    <div class="clear"></div>
+                {{else}}
+                    <div class="thread-message right"><span>{{content}}</span></div>
+                    <div class="clear"></div>
+                {{/if}}
+            {{else}}
+                {{#if isLink}}
+                    <div class="thread-message left"><a href="{{content}}" target="_blank">{{content}}</a></div>
+                    <div class="clear"></div>
+                    {{#if isImage}}
+                        <img class="message-img" src="{{content}}">
+                    {{/if}}
+                {{else}}
+                    <div class="thread-message left"><span>{{content}}</span></div>
+                    <div class="clear"></div>
+                {{/if}}
+            {{/if}}
+        {{else}}
+            <div>No messages</div>
+        {{/each}}
+    </div>
+    <div class="wrapper">
+        <form method="post">
+            <div class="form-group">
+                <textarea id="chat-form" name="content" class="input-field"></textarea>
+                <input type="submit" value="Send" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>

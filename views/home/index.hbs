@@ -1,0 +1,19 @@
+{{#if user}}
+    <form method="get" action="/user/find">
+        <input type="text" name="username" placeholder="Search usernames..."/>
+        <input type="submit" value="Search"/>
+    </form>
+    <div class="container">
+        {{#each users}}
+            <div class="wrapper row">
+                <h3><a href="/thread/{{this.username}}">{{this.username}}</a></h3>
+            </div>
+        {{else}}
+            <div class="wrapper row">
+                <h3>Currently no active chats.</h3>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <h1 class="head-title">Welcome to Messenger!</h1>
+{{/if}}
