@@ -1,15 +1,16 @@
 {
-  "name": "demo-server",
+  "name": "messenger-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engine": ">=7.6",
+  "engines": {
+    "node": ">= 7.6.0"
+  },
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "HIS",
   "license": "MIT",
   "dependencies": {
     "body-parser": "1.17.2",
